@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!-- Services Beans -->
+	<bean id="albumService" class="net.samsolutions.spring.AlbumServiceImpl">
+		<property name="albumDao" ref="albumDao" />
+	</bean>
+	<bean id="fileService" class="net.samsolutions.spring.FileServiceImpl">
+		<property name="fileDao" ref="fileDao" />
+	</bean>
+	<bean id="shareInformationService" class="net.samsolutions.spring.ShareInformationServiceImpl">
+		<property name="shareInformationDao" ref="shareInformationDao" />
+	</bean>
+	<bean id="userService" class="net.samsolutions.spring.UserServiceImpl">
+		<property name="userDao" ref="userDao" />
+	</bean>
+
+	<!-- DAOs -->
+	<bean id="albumDao" class="net.samsolutions.hibernate.AlbumDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="fileDao" class="net.samsolutions.hibernate.FileDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="shareInformationDao" class="net.samsolutions.hibernate.ShareInformationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="userDao" class="net.samsolutions.hibernate.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Wicket Application -->
+	<bean id="wicketApplication" class="net.samsolutions.wicket.WicketApp" />
+
+	<!-- Hibernate session factory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:/hibernate.cfg.xml"/>
+	</bean>
+
+	<!-- Tell Spring it should use @Transactional annotations -->
+	<tx:annotation-driven />
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

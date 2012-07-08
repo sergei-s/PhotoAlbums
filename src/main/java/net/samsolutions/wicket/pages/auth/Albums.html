@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head></head>
+<body>
+	<wicket:extend>
+		<div id="Content">
+			
+
+			<form wicket:id="form">
+				<table>
+					<tr>
+						<td><p><wicket:message key="albums.name" /> <input wicket:id="AlbumName" type="text" /></p></td>
+						<td><input type="submit" wicket:id="ajax-button" class="g-button-small" wicket:message="value:albums.create" /></td>
+						<td><div wicket:id="feedback"></div></td>
+					</tr>
+				</table>
+			</form>
+			<wicket:message key="albums.current" />
+			<div wicket:id="dataContainer">
+				<div wicket:id="navigator" id="navigator"></div>
+				<table class="dataview">
+					<tr wicket:id="pageable">
+						<td width="200"><a wicket:id="link" class="albums"><span wicket:id="name"></span></a></td>
+						<td><a wicket:id="delete"><img src="images/delete.gif"
+								wicket:message="title:albums.delete"></a></td>
+						<div wicket:id="modal"></div>
+						<td><a wicket:id="rename"><img src="images/edit.gif"
+								wicket:message="title:albums.edit"></a></td>
+						<td><a wicket:id="share"><img src="images/share.gif"
+								wicket:message="title:albums.share"></a></td> 
+					</tr>
+				</table>
+			</div>
+		</div>
+	</wicket:extend>
+</body>
+</html>

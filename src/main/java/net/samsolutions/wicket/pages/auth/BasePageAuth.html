@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head></head>
+<body>
+	<wicket:extend>
+		<link rel="stylesheet" type="text/css" href="css/BasePageAuth.css">
+		<div id="Menu">
+			<ul class="bmenu">
+				<li><wicket:link>
+						<a wicket:id="albums"><wicket:message key="baseA.linkToAlbums" /></a>
+					</wicket:link></li>
+				<br />
+				<li><wicket:link>
+						<a wicket:id="sharedUsers"><wicket:message key="baseA.linkToSharedAlbums" /></a>
+					</wicket:link></li>
+				<br />
+				<li><wicket:link>
+						<a wicket:id="profile"><wicket:message key="baseA.linkToProfile" /></a>
+					</wicket:link></li>
+			</ul>
+		</div>
+		<wicket:child />
+	</wicket:extend>
+</body>
+</html>

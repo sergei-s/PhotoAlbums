@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head></head>
+<body>
+	<wicket:extend>
+		<div id="Content">
+			<span wicket:id="album"></span><br />
+			<form wicket:id="upload">
+				<div>
+					<fieldset class="upload">
+						<legend>
+							<wicket:message key="upload.form" />
+						</legend>
+						<table>
+							<tr>
+								<td><span class="file-wrapper"> <input wicket:id="fileInput" type="file"
+										multiple="multiple" /> <span class="button"><wicket:message key="upload.choose" /></span>
+								</span></td>
+								<td><input type="submit" wicket:id="ajax-button" class="g-button-small" wicket:message="value:upload.submit" /></td>
+							</tr>
+						</table>
+					</fieldset>
+				</div>
+			</form>
+			<div wicket:id="uploadFeedback"></div> 
+			<br>
+			<div wicket:id="dataContainer">
+				<div wicket:id="navigator" id="navigator"></div> 
+				<table class="dataview" cellpadding="10%">
+					<span wicket:id="pageable">
+					<tr>
+						<a wicket:id="big"><img class="usersImages" wicket:id="img" /></a>
+					</tr>
+					</span>
+				</table>
+			</div>
+		</div>
+	</wicket:extend>
+</body>
+</html>

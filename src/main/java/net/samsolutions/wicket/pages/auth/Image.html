@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head></head>
+<body>
+	<wicket:extend>
+		<div id="Content">
+			<table id="extra">
+				<tr>
+					<td><a wicket:id="linkBack" id="linkBack"><wicket:message key="image.linkBack" /></a></td>
+					<td>
+						<form wicket:id="formDelete">
+							<input type="submit" class="g-button-small" wicket:message="value:image.delete" />
+						</form>
+					</td>
+					<td>
+						<form wicket:id="formMove">
+							<table>
+								<tr>
+									<td>
+										<p>
+											<wicket:message key="image.moveTitle" />
+											<select wicket:id="albums"></select>
+										</p>
+									</td>
+									<td><input type="submit" class="g-button-small" wicket:message="value:image.move" /></td>
+									<td>
+										<div align="center" wicket:id="feedback"></div>
+									</td>
+								</tr>
+							</table>
+						</form>
+					</td>
+				</tr>
+			</table>
+			<form wicket:id="formNavigate">
+				<input type="submit" class="g-button-navigate-big" wicket:id="back"
+					wicket:message="value:image.back" /> <input type="submit" class="g-button-navigate-big"
+					wicket:id="forward" wicket:message="value:image.forward" />
+			</form>
+			<br /> <img wicket:id="img" id="image"/>
+		</div>
+	</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head></head>
+<body>
+	<wicket:extend>
+		<div id="Content">
+			<a wicket:id="linkBack" id="linkBack"><wicket:message key="sharedFiles.linkBackToAlbums" /></a><br /><br />
+			<div wicket:id="dataContainer">
+				<div wicket:id="navigator" id="navigator"></div>
+				<table class="dataview" cellpadding="10%">
+					<span wicket:id="pageable">
+					<tr>
+						<a wicket:id="big"><img class="usersImages" wicket:id="img" /></a>
+					</tr>
+					</span>
+				</table>
+			</div>
+		</div>
+	</wicket:extend>
+</body>
+</html>
